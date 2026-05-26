@@ -1,0 +1,1 @@
+Drop your thumbnail images here. Filename must match item name (lowercase, hyphens for spaces). E.g. 'my-project.jpg'

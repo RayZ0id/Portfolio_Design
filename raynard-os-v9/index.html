@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RaynardOS — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Almendra:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+<!-- ═══ Stylesheet ═══════════════════════════════════════════ -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══ BOOT ═════════════════════════════════════════════════ -->
+<div id="boot">
+  <div class="boot-logo">RaynardOS</div>
+  <div class="boot-ver">PORTFOLIO SYSTEM · v1.0</div>
+  <div class="boot-track"><div class="boot-fill" id="bfill"></div></div>
+  <div class="boot-msg" id="bmsg">Initializing...</div>
+</div>
+
+<!-- ═══ DESKTOP ══════════════════════════════════════════════ -->
+<div id="desktop" oncontextmenu="ctxShow(event)">
+  <div id="icon-grid"></div>
+</div>
+
+<!-- ═══ TASKBAR ══════════════════════════════════════════════ -->
+<div id="taskbar">
+  <div id="start-btn" onclick="smToggle()">
+    <span>&#9670;</span> Raynard
+  </div>
+  <div id="tb-wins"></div>
+  <div id="tb-right">
+    <div id="clock-box">
+      <div id="clock-time">00:00</div>
+      <div id="clock-date">---</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ START MENU ════════════════════════════════════════════ -->
+<div id="smenu">
+  <div class="sm-head">
+    <h2>Raynard</h2>
+    <p>Graphic Designer · Developer · Creator</p>
+  </div>
+  <div class="sm-list" id="sm-list"></div>
+  <div class="sm-div"></div>
+  <div class="sm-about-btn" onclick="openAbout(); smClose();">
+    <span class="sm-item-ico"><img src="icons/Person.png" style="width:50px;height:50px;object-fit:contain;vertical-align:middle;"></span> About Raynard
+  </div>
+</div>
+
+<!-- ═══ CONTEXT MENU ══════════════════════════════════════════ -->
+<div id="ctx">
+  <div class="ctx-row" onclick="ctxClose()">
+    <span class="ctx-ico">↻</span> Refresh
+  </div>
+  <div class="ctx-row" onclick="ctxClose(); openAbout();">
+    <span class="ctx-ico"><img src="icons/Person.png" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;"></span> About
+  </div>
+  <div class="ctx-row" onclick="ctxClose(); openAllWins();">
+    <span class="ctx-ico">⊞</span> Open All Folders
+  </div>
+  <div class="ctx-row" onclick="ctxClose(); closeAllWins();">
+    <span class="ctx-ico">✕</span> Close All
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS (load order matters) ════════════════════════
+     data.js      — CATS array: categories & items
+     portfolio.js — buildPortfolioContent() helper
+     windows.js   — win open/close/min/max state
+     icons.js     — desktop icon grid
+     taskbar.js   — taskbar buttons, start menu, clock
+     about.js     — About window
+     desktop.js   — init, drag, context menu
+     boot.js      — boot animation (calls initDesktop at end)
+══════════════════════════════════════════════════════════════ -->
+<script src="js/data.js"></script>
+<script src="js/portfolio.js"></script>
+<script src="js/windows.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/taskbar.js"></script>
+<script src="js/about.js"></script>
+<script src="js/desktop.js"></script>
+<script src="js/boot.js"></script>
+
+<!-- ═══ KICK OFF ══════════════════════════════════════════════ -->
+<script>boot();</script>
+
+</body>
+</html>

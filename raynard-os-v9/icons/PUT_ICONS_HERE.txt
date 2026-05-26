@@ -1,0 +1,11 @@
+Place your 64x64px PNG icon files in this folder.
+
+Expected filenames:
+- video.png
+- animation.png
+- 3d.png
+- games.png
+- posters.png
+- image-editing.png
+- photography.png
+- branding.png
